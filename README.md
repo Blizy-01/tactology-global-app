@@ -1,4 +1,4 @@
-# Tactology Global — Staff Scheduling App
+# Tactology Global: Staff Scheduling App
 
 A mobile application built for the **Tactology Global assignment**, implementing a healthcare staff scheduling and publications platform. Built with React Native + Expo.
 
