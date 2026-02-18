@@ -97,7 +97,7 @@ constants/
 The app uses **Expo Router's file-based routing**. The directory structure maps directly to routes. The Shift Details screen is a **bottom sheet modal** (`presentation: 'modal'`, `animation: 'slide_from_bottom'`).
 
 ### Theming
-Theming is handled via **NativeWind + CSS custom properties**. Light and dark themes are defined in `theme.ts` as NativeWind `vars()` objects and applied at the root via `ThemeProvider`. Every component uses semantic tokens (`bg-background`, `text-foreground`, `text-primary`) — dark mode is automatic.
+Theming is handled via **NativeWind + CSS custom properties**. Light and dark themes are defined in `theme.ts` as NativeWind `vars()` objects and applied at the root via `ThemeProvider`. Every component uses semantic tokens (`bg-background`, `text-foreground`, `text-primary`), dark mode is automatic.
 
 ### Data Layer
 All data hooks (`useShifts`, `usePublications`, etc.) simulate async fetching with a `setTimeout` delay, returning `{ data, isLoading, error, refetch }`. This pattern means swapping mock data for a real API requires only changing the hook internals — screens and components are untouched.
@@ -110,8 +110,8 @@ State is managed locally via React's `useState`/`useEffect` within custom hooks.
 ## Implementation Notes
 
 - **React 19** is used alongside Expo 54. The New Architecture (`newArchEnabled`) is currently disabled for stability, as some dependencies (NativeWind, Reanimated 4) have partial React 19 support.
-- The **React Compiler** (`reactCompiler`) is disabled for the same reason — it caused a render hang during the bundling phase.
+- The **React Compiler** (`reactCompiler`) is disabled for the same reason, it caused a render hang during the bundling phase.
 - Shift cards use a **4px coloured left-border accent** (blue for morning, amber for afternoon) matching the Figma design spec.
 - Dutch UI strings (`Mijn rooster`, `Beschikbaar`, `Beschrijving`, `Notities`) are used throughout to match the assignment's target locale.
-- **TypeScript strict mode** is enabled — all types are explicit with no implicit `any`.
+- **TypeScript strict mode** is enabled, all types are explicit with no implicit `any`.
 - **Edge cases** are handled on all data-driven screens: loading skeletons, empty states, and error states with retry.
